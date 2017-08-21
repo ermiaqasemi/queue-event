@@ -5,9 +5,6 @@ sudo: false
 node_js:
   - 0.10
 
-script:
-  - grunt ci
-
 notifications:
   email: false
   irc:
