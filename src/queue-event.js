@@ -13,14 +13,14 @@
 	}
 	QueueEvent.prototype = {
 
-		addListener : function(name, periority, fn) {
+		addListener : function(name, priority, fn) {
 
 			var queue =  this.queue;
 
 			event = {
-				periority: periority,
+				priority: priority,
 				fn: fn
-			}
+			};
 			queue[ name ] = queue[ name ] ? queue[ name ] : [ ];
 			queue[ name ].push( event );
 			this.queue = queue;
@@ -39,7 +39,7 @@
 
 			var sortable = [];
 			for ( var event in queue[ name ] ) {
-				sortable.push( [ queue[ name ][ event ], queue[ name ][ event ].periority ] );
+				sortable.push( [ queue[ name ][ event ], queue[ name ][ event ].priority ] );
 			}
 
 			sortable.sort(function( a, b ) {
